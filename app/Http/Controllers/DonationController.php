@@ -42,13 +42,13 @@ class DonationController extends Controller
 
             if($request->type == 'Become Donor')
             {
-                $donor  = Donation::create($request->exept('_token','type'));
+                $donor  = Donation::create($request->except('_token','type'));
                 $success['user'] =  $donor;
                 $success['message'] = "Doner created..";
                 return $this->apiResponse($success);
             }elseif($request->type == 'Find A Donor')
             {
-                $donor  = FindADonor::create($request->exept('_token','type'));
+                $donor  = FindADonor::create($request->except('_token','type'));
                 $success['user'] =  $donor;
                 $success['message'] = "Doner created..";
                 return $this->apiResponse($success);
